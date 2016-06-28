@@ -2,8 +2,7 @@
   (:require [cheshire.core :as json]
             [clojure.data :refer [diff]]
             [clojure.java.io :refer [input-stream]]
-            [environ.core :refer [env]]
-            [midje.sweet :refer :all])
+            [environ.core :refer [env]])
   (:import [com.github.restdriver.clientdriver ClientDriverFactory ClientDriverRule
             RestClientDriver ClientDriverRequest$Method]
            [com.github.restdriver.clientdriver.capture StringBodyCapture]
@@ -146,6 +145,6 @@
 
           ~@body
 
-          (try (.verify driver#) (catch Exception e# (fact e# => nil)))
+          (.verify driver#)
 
           (finally (.shutdownQuietly driver#))))))

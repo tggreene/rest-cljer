@@ -9,7 +9,6 @@
                  [com.github.rest-driver/rest-client-driver "1.1.42" :exclusions [org.slf4j/slf4j-nop]]
                  [environ "0.3.0"]
                  [junit "4.11"]
-                 [midje "1.5.1"]
                  [org.clojure/clojure "1.4.0"]
                  [speclj "3.1.0"]]
 
@@ -17,4 +16,5 @@
 
   :profiles {:dev {:plugins [[lein-midje "3.1.0"]
                              [lein-release "1.0.5"]
-                             [lein-rpm "0.0.4"]]}})
+                             [lein-rpm "0.0.4"]]
+                   :dependencies [[midje "1.5.1"]]}})
